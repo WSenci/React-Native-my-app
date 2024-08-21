@@ -1,17 +1,21 @@
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function Texto() {
+interface TextoProps {
+    content: string;
+}
+
+export default function Texto(props: TextoProps) {
     const styles = StyleSheet.create({
         texto: {
-            width: 100,
-            height: 100,
+            fontSize: 16,
+            color: '#000',
         },
     });
 
     return (
         <View>
             <Text style={styles.texto}>
-                Ben10
+                {props.content}
             </Text>
         </View>
     );
