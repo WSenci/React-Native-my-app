@@ -1,7 +1,8 @@
-import { View, Image, StyleSheet, StyleProp, ImageStyle } from 'react-native';
+import { View, Image, StyleSheet, StyleProp, ImageStyle, ImageSourcePropType } from 'react-native';
 
 interface ImagemProps {
   style?: StyleProp<ImageStyle>;
+  source: ImageSourcePropType
 }
 
 export default function Imagem(props: ImagemProps) {
@@ -16,7 +17,7 @@ export default function Imagem(props: ImagemProps) {
       <Image
         style={[styles.logo, props.style]}
         
-        source={require('./1.jpg')}
+        source={props.source}
       />
   );
 };

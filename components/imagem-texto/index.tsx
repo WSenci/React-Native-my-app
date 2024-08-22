@@ -1,16 +1,17 @@
-import { View, StyleSheet, StyleProp, ImageStyle } from "react-native"
+import { View, StyleSheet, StyleProp, ImageStyle, ImageSourcePropType } from "react-native"
 import Imagem from "../imagem"
 import Texto from "../texto"
 
 interface ImagemTextoProps {
     imagemStyle?: StyleProp<ImageStyle>;
     textoContent: string;
+    source: ImageSourcePropType
 }
 
-export default function ImagemTexto({ imagemStyle, textoContent }: ImagemTextoProps) {
+export default function ImagemTexto({ imagemStyle, textoContent, source }: ImagemTextoProps) {
     return (
         <View style={styles.card}>
-            <Imagem style={imagemStyle}/><Texto content={textoContent}/>
+            <Imagem source={source} style={imagemStyle}/><Texto content={textoContent}/>
         </View>
     )
 }
